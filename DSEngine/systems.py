@@ -20,4 +20,19 @@ class RenderableSystem:
                 texture = self.am.get_texture(renderable.key)
 
                 if texture is not None:
-                    self.screen.blit(texture, position.tuple_pos)
+                    self.screen.blit(texture, (position.x, position.y), area=renderable.src)
+
+class InputSystem:
+    def __init__(self, em: EntityManager):
+        self.em = em
+
+    def update(self):
+        player = self.em.get_entity_by_name("player")
+
+        if player is not None:
+            input_component = player.components[PlayerControllable]
+            position = player.components[Position]
+
+            if input_component.im.is_key_down(pygame.K_d):
+                position.x += 1
+        

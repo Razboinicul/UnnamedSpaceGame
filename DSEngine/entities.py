@@ -24,7 +24,7 @@ class Entity:
 class EntityManager:
     def __init__(self):
         self.next_entity_id = 0
-        self.entities = {}
+        self.entities: dict[int, Entity] = {}
 
         # Below is the cache for when we add a new entity, we can then store then here for faster lookup
         self.name_map = {}            
