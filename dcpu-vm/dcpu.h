@@ -44,7 +44,7 @@ typedef enum {
   // [SP] / PEEK
   PEEK, // 0x19 
   // [SP + next word] / PICK n
-  PICK_N // 0x1a
+  PICK_N, // 0x1a
   SP, // 0x1b
   PC, // 0x1c
   EX, // 0x1d
@@ -89,15 +89,39 @@ typedef enum {
 typedef enum {
   NA,
   SET,
-  ADD
+  ADD,
   SUB,
   MUL,
   DIV,
   DVI,
   MOD,
   MDI,
-  
+  AND,
+  XOR,
+  SHR,
+  ASR,
+  SHL,
+  IFB,
+  IFC,
+  IFE,
+  IFN,
+  IFG,
+  IFA,
+  IFL,
+  IFU,
+  EMPTY_1,
+  EMPTY_2,
+  ADX,
+  SBX,
+  EMPTY_3,
+  EMPTY_4,
+  STI,
+  STD,
 } BasicOpcode;
 
+typedef enum {
+  NA = 0x00,
+  JSR = 0x01,
+} SpecialOpcode;
 
 #endif

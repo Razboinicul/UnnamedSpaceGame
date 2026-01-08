@@ -16,7 +16,7 @@ if __name__ == "__main__":
     input = ds.InputManager()
     timer = ds.Timer(1000)
 
-    # Setup scene
+    # Setup scene 
     entity_manager = ds.EntityManager()
     asset_manager = ds.AssetManager()
     asset_manager.load_assets()
