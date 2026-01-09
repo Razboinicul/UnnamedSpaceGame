@@ -1,0 +1,7 @@
+# Stupid fixes so I can use clang-cl on windows
+If:
+  PathMatch: .*\.h$
+CompileFlags:
+  Add:
+    - /TC          # Force as C
+    - /std:c11     # C11 standard
